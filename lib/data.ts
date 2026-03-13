@@ -1,6 +1,7 @@
 export type Year = {
   year: string
   brands: string[]
+  fictionalBrands?: string[]
   projects?: string[]
   videos?: string[]
   fictional?: boolean
@@ -22,7 +23,7 @@ export const YEARS: Year[] = [
   { year: "2023", brands: ["adidas", "Kappa x Alpine", "C.P. Company", "UGG", "Nanamica", "Barbour", "Wedgwood"] },
   { year: "2024", brands: ["adidas", "Reebok", "Umbro", "Thrasher", "Gap", "Evisu", "Vivienne Westwood", "Berghaus", "Oakley", "Carhartt WIP", "Needles", "UGG"] },
   { year: "2025", brands: ["Nike", "New Balance", "adidas", "Engineered Garments", "C.P. Company", "Dr. Martens", "Maharishi", "Fred Perry", "Barbour", "The North Face", "UGG", "Fender"], projects: ["Manor Place"], videos: ["Videodaze"] },
-  { year: "2026", brands: ["Nike", "Schott", "World Industries", "Pepe Jeans", "Smeg", "Brompton"] },
+  { year: "2026", brands: ["Nike", "Schott", "World Industries"], fictionalBrands: ["Pepe Jeans", "Smeg", "Brompton"] },
   { year: "2027", brands: ["Lucozade", "Harry Potter", "Guinness", "Speedo", "Route One"], fictional: true },
   { year: "2028", brands: ["Beatrix Potter", "Greggs", "BlackRock", "Ryanair", "Coronation of King William V"], fictional: true },
   { year: "2029", brands: ["Wetherspoons", "Microsoft", "Tesla", "Tony Hawk Foundation", "Luton Airport"], fictional: true },
