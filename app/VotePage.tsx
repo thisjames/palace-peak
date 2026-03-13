@@ -325,6 +325,9 @@ function YearRow({
         {/* Brands + bar */}
         {hasBrands && (
           <div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '0.25rem' }}>
+              Brands
+            </div>
             <div style={{
               fontFamily: 'var(--font-body)',
               fontSize: '0.68rem',
