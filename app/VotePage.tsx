@@ -150,7 +150,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
         )}
 
         {/* Section: Real years */}
-        <SectionLabel text="Real years — 2012 to 2026" />
+        <SectionLabel text="2011 — 2026" />
         <div>
           {realYears.map((y, i) => (
             <YearRow
@@ -169,7 +169,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
         </div>
 
         {/* Section: Fictional years */}
-        <SectionLabel text="Fictional future years — 2027 to 2030" style={{ marginTop: '2rem' }} />
+        <SectionLabel text="2027 — 2030" style={{ marginTop: '2rem' }} />
         <div>
           {fictionYears.map((y, i) => (
             <YearRow
@@ -244,6 +244,10 @@ function YearRow({
 }) {
   const pct = total > 0 ? ((votes / total) * 100).toFixed(1) : '0.0'
   const barWidth = maxVotes > 0 ? (votes / maxVotes) * 100 : 0
+  const hasProjects = year.projects && year.projects.length > 0
+  const hasVideos = year.videos && year.videos.length > 0
+  const hasSkateContent = hasProjects || hasVideos
+  const hasBrands = year.brands && year.brands.length > 0
 
   return (
     <div
@@ -251,7 +255,7 @@ function YearRow({
       style={{
         display: 'grid',
         gridTemplateColumns: '80px 1fr 110px',
-        alignItems: 'center',
+        alignItems: 'start',
         gap: '1rem',
         borderBottom: isLast ? 'none' : '1px solid var(--border)',
         padding: '0.9rem 0.6rem',
@@ -276,6 +280,7 @@ function YearRow({
         letterSpacing: '-0.03em',
         lineHeight: 1,
         color: fictional ? 'var(--text-2)' : 'var(--text)',
+        paddingTop: '0.1rem',
       }}>
         {year.year}
         {fictional && (
@@ -283,26 +288,76 @@ function YearRow({
         )}
       </div>
 
-      {/* Brands + bar */}
+      {/* Content */}
       <div>
-        <div style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: '0.68rem',
-          color: isVoted ? 'var(--text)' : 'var(--text-2)',
-          lineHeight: 1.6,
-          marginBottom: '0.5rem',
-        }}>
-          {year.brands.join(' · ')}
-        </div>
-        <div style={{ height: 2, background: 'var(--bar-bg)', borderRadius: 1, overflow: 'hidden' }}>
+        {/* Projects + Videos row */}
+        {hasSkateContent && (
           <div style={{
-            height: '100%',
-            width: `${barWidth}%`,
-            background: fictional ? '#555' : 'var(--text)',
-            borderRadius: 1,
-            transition: 'width 0.6s ease',
-          }} />
-        </div>
+            display: 'flex',
+            gap: '2rem',
+            marginBottom: hasBrands ? '0.6rem' : '0',
+            paddingBottom: hasBrands ? '0.6rem' : '0',
+            borderBottom: hasBrands ? '1px solid var(--border)' : 'none',
+          }}>
+            {hasProjects && (
+              <div>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '0.25rem' }}>
+                  Projects
+                </div>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.68rem', color: 'var(--text)', lineHeight: 1.6 }}>
+                  {year.projects!.join(' · ')}
+                </div>
+              </div>
+            )}
+            {hasVideos && (
+              <div>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '0.25rem' }}>
+                  Videos
+                </div>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.68rem', color: 'var(--text)', lineHeight: 1.6 }}>
+                  {year.videos!.join(' · ')}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Brands + bar */}
+        {hasBrands && (
+          <div>
+            <div style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.68rem',
+              color: isVoted ? 'var(--text)' : 'var(--text-2)',
+              lineHeight: 1.6,
+              marginBottom: '0.5rem',
+            }}>
+              {year.brands.join(' · ')}
+            </div>
+            <div style={{ height: 2, background: 'var(--bar-bg)', borderRadius: 1, overflow: 'hidden' }}>
+              <div style={{
+                height: '100%',
+                width: `${barWidth}%`,
+                background: fictional ? '#555' : 'var(--text)',
+                borderRadius: 1,
+                transition: 'width 0.6s ease',
+              }} />
+            </div>
+          </div>
+        )}
+
+        {/* Bar for years with no brands */}
+        {!hasBrands && (
+          <div style={{ height: 2, background: 'var(--bar-bg)', borderRadius: 1, overflow: 'hidden', marginTop: '0.4rem' }}>
+            <div style={{
+              height: '100%',
+              width: `${barWidth}%`,
+              background: 'var(--text)',
+              borderRadius: 1,
+              transition: 'width 0.6s ease',
+            }} />
+          </div>
+        )}
       </div>
 
       {/* Votes + button */}
