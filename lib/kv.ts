@@ -1,8 +1,8 @@
 import { Redis } from '@upstash/redis'
 
 const kv = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+  url: process.env.KV_REST_API_URL!,
+  token: process.env.KV_REST_API_TOKEN!,
 })
 
 export const VOTE_KEY = (year: string) => `votes:${year}`
@@ -11,7 +11,7 @@ export const TOTAL_KEY = 'votes:total'
 export async function getVoteCounts(): Promise<Record<string, number>> {
   const { YEARS } = await import('./data')
   const keys = YEARS.map(y => VOTE_KEY(y.year))
-  const values = await Promise.all(keys.map(k => kv.get<number>(k)))
+  const values = await kv.mget<number[]>(...keys)
   const result: Record<string, number> = {}
   YEARS.forEach((y, i) => {
     result[y.year] = (values[i] as number) || 0
