@@ -169,7 +169,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
         </div>
 
         {/* Section: Fictional years */}
-        <SectionLabel text="2027 — 2030" style={{ marginTop: '2rem' }} />
+        <SectionLabel text="2027 — 2030  ·  SPECULATIVE" style={{ marginTop: '2rem' }} />
         <div>
           {fictionYears.map((y, i) => (
             <YearRow
@@ -279,13 +279,10 @@ function YearRow({
         fontSize: '2rem',
         letterSpacing: '-0.03em',
         lineHeight: 1,
-        color: fictional ? 'var(--fiction-orange)' : 'var(--text)',
+        color: 'var(--text)',
         paddingTop: '0.1rem',
       }}>
         {year.year}
-        {fictional && (
-          <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '0.5rem', letterSpacing: '0.12em', color: 'var(--fiction-orange)', textTransform: 'uppercase', marginTop: '0.15rem' }}>fictional</span>
-        )}
       </div>
 
       {/* Content */}
@@ -335,21 +332,16 @@ function YearRow({
               lineHeight: 1.6,
               marginBottom: '0.5rem',
             }}>
-              {fictional
-                ? <span style={{ color: 'var(--fiction-orange)' }}>{year.brands.join(' · ')}</span>
-                : <>
-                    {year.brands.join(' · ')}
-                    {year.fictionalBrands && year.fictionalBrands.length > 0 && (
-                      <span style={{ color: 'var(--fiction-orange)' }}>{' · '}{year.fictionalBrands.join(' · ')}</span>
-                    )}
-                  </>
-              }
+              {year.brands.join(' · ')}
+              {year.fictionalBrands && year.fictionalBrands.length > 0 && (
+                <span style={{ color: 'var(--fiction-orange)' }}>{' · '}{year.fictionalBrands.join(' · ')}</span>
+              )}
             </div>
             <div style={{ height: 2, background: 'var(--bar-bg)', borderRadius: 1, overflow: 'hidden' }}>
               <div style={{
                 height: '100%',
                 width: `${barWidth}%`,
-                background: fictional ? 'var(--fiction-orange)' : 'var(--text)',
+                background: 'var(--text)',
                 borderRadius: 1,
                 transition: 'width 0.6s ease',
               }} />
