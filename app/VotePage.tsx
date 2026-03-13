@@ -189,7 +189,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
         </div>
 
         <footer style={{ marginTop: '3rem', borderTop: '1px solid var(--border)', paddingTop: '1.5rem', fontFamily: 'var(--font-body)', fontSize: '0.6rem', color: 'var(--text-2)', lineHeight: 1.8 }}>
-          <p>Years 2027–2030 are <span style={{ color: 'var(--fiction-orange)' }}>fictional speculation</span>. Brands listed are not confirmed collaborators.</p>
+          <p>Not affiliated with Palace Skateboards. Years 2027–2030 are <span style={{ color: 'var(--fiction-orange)' }}>fictional speculation</span>. Brands listed are not confirmed collaborators.</p>
           <p style={{ marginTop: '0.5rem' }}>{formatNumber(stats.total)} total votes &bull; Results update every 10 seconds</p>
         </footer>
       </main>
