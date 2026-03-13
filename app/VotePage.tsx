@@ -169,7 +169,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
         </div>
 
         {/* Section: Fictional years */}
-        <SectionLabel text="2027 — 2030  ·  SPECULATIVE" style={{ marginTop: '2rem' }} />
+        <SectionLabel text="2027 — 2030" suffix="SPECULATIVE" style={{ marginTop: '2rem' }} />
         <div>
           {fictionYears.map((y, i) => (
             <YearRow
@@ -197,7 +197,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
   )
 }
 
-function SectionLabel({ text, style }: { text: string; style?: React.CSSProperties }) {
+function SectionLabel({ text, suffix, style }: { text: string; suffix?: string; style?: React.CSSProperties }) {
   return (
     <div style={{
       fontFamily: 'var(--font-body)',
@@ -214,6 +214,7 @@ function SectionLabel({ text, style }: { text: string; style?: React.CSSProperti
       ...style,
     }}>
       {text}
+      {suffix && <span style={{ color: 'var(--fiction-orange)' }}>·  {suffix}</span>}
     </div>
   )
 }
