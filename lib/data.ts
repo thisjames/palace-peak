@@ -24,7 +24,7 @@ export const YEARS: Year[] = [
   { year: "2025", brands: ["Nike", "New Balance", "adidas", "Engineered Garments", "C.P. Company", "Dr. Martens", "Maharishi", "Fred Perry", "Barbour", "The North Face", "UGG", "Fender"], projects: ["Manor Place"], videos: ["Videodaze"] },
   { year: "2026", brands: ["Nike", "Schott", "World Industries", "Pepe Jeans", "Smeg", "Brompton"] },
   { year: "2027", brands: ["Lucozade", "Harry Potter", "Guinness", "Speedo", "Route One"], fictional: true },
-  { year: "2028", brands: ["Beatrix Potter", "Greggs", "BlackRock", "Ryanair", "Red Hot Chili Peppers", "Coronation of King William V"], fictional: true },
+  { year: "2028", brands: ["Beatrix Potter", "Greggs", "BlackRock", "Ryanair", "Coronation of King William V"], fictional: true },
   { year: "2029", brands: ["Wetherspoons", "Microsoft", "Tesla", "Tony Hawk Foundation", "Luton Airport"], fictional: true },
   { year: "2030", brands: ["IKEA", "NASA", "GCHQ", "HMRC"], fictional: true },
 ]
