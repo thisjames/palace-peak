@@ -93,7 +93,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
       }}>
         <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.4rem' }}>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '0.4rem' }}>
               Palace Skateboards
             </div>
             <h1 style={{
@@ -107,7 +107,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
             </h1>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.25rem' }}>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '0.25rem' }}>
               The answer
             </div>
             <div style={{
@@ -119,7 +119,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
             }}>
               {peakYear ?? '—'}
             </div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', color: 'var(--text-3)', marginTop: '0.2rem' }}>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', color: 'var(--text-2)', marginTop: '0.2rem' }}>
               {formatNumber(stats.total)} vote{stats.total !== 1 ? 's' : ''} cast
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
 
         {/* Section: Fictional years */}
         <SectionLabel text="Fictional future years — 2027 to 2030" style={{ marginTop: '2rem' }} />
-        <div style={{ opacity: 0.65 }}>
+        <div>
           {fictionYears.map((y, i) => (
             <YearRow
               key={y.year}
@@ -188,7 +188,7 @@ export default function VotePage({ initialStats, years }: { initialStats: Stats;
           ))}
         </div>
 
-        <footer style={{ marginTop: '3rem', borderTop: '1px solid var(--border)', paddingTop: '1.5rem', fontFamily: 'var(--font-body)', fontSize: '0.6rem', color: 'var(--text-3)', lineHeight: 1.8 }}>
+        <footer style={{ marginTop: '3rem', borderTop: '1px solid var(--border)', paddingTop: '1.5rem', fontFamily: 'var(--font-body)', fontSize: '0.6rem', color: 'var(--text-2)', lineHeight: 1.8 }}>
           <p>Fan project. Not affiliated with Palace Skateboards.</p>
           <p>Years 2027–2030 are fictional speculation. Brands listed are not confirmed collaborators.</p>
           <p style={{ marginTop: '0.5rem' }}>{formatNumber(stats.total)} total votes &bull; Results update every 10 seconds</p>
@@ -205,7 +205,7 @@ function SectionLabel({ text, style }: { text: string; style?: React.CSSProperti
       fontSize: '0.55rem',
       letterSpacing: '0.18em',
       textTransform: 'uppercase',
-      color: 'var(--text-3)',
+      color: 'var(--text-2)',
       marginBottom: '0.75rem',
       paddingBottom: '0.5rem',
       borderBottom: '1px solid var(--border)',
@@ -275,11 +275,11 @@ function YearRow({
         fontSize: '2rem',
         letterSpacing: '-0.03em',
         lineHeight: 1,
-        color: fictional ? 'var(--text-3)' : 'var(--text)',
+        color: fictional ? 'var(--text-2)' : 'var(--text)',
       }}>
         {year.year}
         {fictional && (
-          <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '0.5rem', letterSpacing: '0.12em', color: 'var(--text-3)', textTransform: 'uppercase', marginTop: '0.15rem' }}>fictional</span>
+          <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '0.5rem', letterSpacing: '0.12em', color: 'var(--text-2)', textTransform: 'uppercase', marginTop: '0.15rem' }}>fictional</span>
         )}
       </div>
 
@@ -288,7 +288,7 @@ function YearRow({
         <div style={{
           fontFamily: 'var(--font-body)',
           fontSize: '0.68rem',
-          color: isVoted ? 'var(--text-2)' : 'var(--text-3)',
+          color: isVoted ? 'var(--text)' : 'var(--text-2)',
           lineHeight: 1.6,
           marginBottom: '0.5rem',
         }}>
@@ -307,10 +307,10 @@ function YearRow({
 
       {/* Votes + button */}
       <div style={{ textAlign: 'right' }}>
-        <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', color: 'var(--text-3)', marginBottom: '0.15rem' }}>
+        <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', color: 'var(--text-2)', marginBottom: '0.15rem' }}>
           {formatNumber(votes)} vote{votes !== 1 ? 's' : ''}
         </div>
-        <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: isVoted ? 'var(--text)' : 'var(--text-3)', letterSpacing: '-0.02em', marginBottom: '0.35rem' }}>
+        <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: isVoted ? 'var(--text)' : 'var(--text-2)', letterSpacing: '-0.02em', marginBottom: '0.35rem' }}>
           {pct}%
         </div>
         {!hasVoted ? (
@@ -363,7 +363,7 @@ function YearRow({
             fontSize: '0.6rem',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            color: 'var(--text-3)',
+            color: 'var(--text-2)',
           }}>
             voted
           </div>
@@ -373,3 +373,6 @@ function YearRow({
   )
 }
 
+function formatNumber(n: number): string {
+  return n.toLocaleString('en-GB')
+}

@@ -11,18 +11,17 @@
   --border: #222222;
   --border-hover: #333333;
   --text: #ffffff;
-  --text-2: #888888;
-  --text-3: #444444;
+  --text-2: #b0b0b0;
+  --text-3: #787878;
   --accent: #ffffff;
   --fiction: #2a2a1e;
   --fiction-border: #3a3a28;
-  --fiction-text: #888877;
+  --fiction-text: #a0a090;
   --voted-border: #ffffff;
   --bar-bg: #1f1f1f;
-  --font-display: 'Arial Black', 'Arial Bold', sans-serif;
-  --font-body: 'Courier New', Courier, monospace;
+  --font-display: var(--font-bebas), 'Arial Black', sans-serif;
+  --font-body: var(--font-mono), 'Courier New', monospace;
 }
-
 
 html {
   background: var(--bg);

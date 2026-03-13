@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getAllStats } from '@/lib/kv'
 
-export const runtime = 'edge'
 export const revalidate = 0
 
 export async function GET() {

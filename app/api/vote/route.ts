@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { castVote } from '@/lib/kv'
 import { YEARS } from '@/lib/data'
 
-export const runtime = 'edge'
-
 export async function POST(req: NextRequest) {
   try {
     const { year } = await req.json()
