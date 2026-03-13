@@ -373,6 +373,3 @@ function YearRow({
   )
 }
 
-function formatNumber(n: number): string {
-  return n.toLocaleString('en-GB')
-}
