@@ -5,7 +5,6 @@
 }
 
 :root {
-:root {
   --bg: #0a0a0a;
   --bg-2: #111111;
   --bg-3: #1a1a1a;
@@ -23,7 +22,7 @@
   --font-display: 'Arial Black', 'Arial Bold', sans-serif;
   --font-body: 'Courier New', Courier, monospace;
 }
-}
+
 
 html {
   background: var(--bg);
