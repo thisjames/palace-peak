@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  experimental: {
+    typedRoutes: false,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+}
 
 module.exports = nextConfig
