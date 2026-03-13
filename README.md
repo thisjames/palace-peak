@@ -29,13 +29,13 @@ gh repo create palace-peak --public --push
 3. Framework will auto-detect as **Next.js**
 4. Click **Deploy** (it will fail on first deploy — that's expected, KV not connected yet)
 
-### 3. Connect Vercel KV
+### 3. Connect Upstash Redis
 
-1. In your Vercel project dashboard, go to **Storage**
-2. Click **Create Database** → **KV**
-3. Name it `palace-peak-kv` (or anything)
-4. Click **Connect** to link it to your project
-5. Vercel auto-injects the four `KV_*` environment variables
+1. In your Vercel project dashboard, go to **Integrations** (top nav)
+2. Search for **Upstash** and click it
+3. Click **Add Integration** → follow the prompts to create a free Redis database
+4. When asked to link it to a project, select `palace-peak`
+5. Vercel auto-injects `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` as environment variables
 
 ### 4. Redeploy
 
