@@ -5,22 +5,8 @@
 }
 
 :root {
-  --bg: #0a0a0a;
-  --bg-2: #111111;
-  --bg-3: #1a1a1a;
-  --border: #222222;
-  --border-hover: #333333;
-  --text: #ffffff;
-  --text-2: #888888;
-  --text-3: #444444;
-  --accent: #ffffff;
-  --fiction: #2a2a1e;
-  --fiction-border: #3a3a28;
-  --fiction-text: #888877;
-  --voted-border: #ffffff;
-  --bar-bg: #1f1f1f;
-  --font-display: var(--font-bebas), 'Arial Black', sans-serif;
-  --font-body: var(--font-mono), 'Courier New', monospace;
+--font-display: 'Arial Black', 'Arial Bold', sans-serif;
+  --font-body: 'Courier New', Courier, monospace;
 }
 
 html {
